@@ -1,0 +1,22 @@
+{
+  "Confirm Password": "Confirmar contraseña",
+  "E-Mail Address": "Correo electrónico",
+  "Password": "Contraseña",
+  "Invalid user or password": "Usuario o password no válidos",
+  "Register": "Registrarse",
+  "Login": "Ingresar",
+  "Login with": "Ingresar con",
+  "Password and confirm password does not match": "Contraseña y su confirmación no coinciden",
+  "Menus": "Menues",
+  "User": "Usuario",
+  "user": "usuario",
+  "password": "contraseña",
+  "Users": "Usuarios",
+  "Home": "Inicio",
+  "Delete confirmation": "Confirmar eliminación",
+  "Are you sure to delete this item?": "¿Esta seguro de eliminar este registro?",
+  "search": "buscar",
+  "new": "nuevo",
+  "no": "no",
+  "yes": "sí"
+}
