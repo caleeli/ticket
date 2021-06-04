@@ -11,13 +11,20 @@
 |
 */
 
+use App\Event;
 use App\Http\Controllers\Auth\LoginOAuthController;
 use App\Http\Controllers\TicketController;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Cache;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
-    return view('welcome');
+    /*$events = Cache::remember('users', 60, function () {
+        return Event::orderBy('start_at', 'desc')->limit(5)->get();
+    });*/
+    $events = Event::orderBy('start_at', 'desc')->limit(5)->get();
+    $lastEvents = Event::orderBy('id', 'desc')->limit(7)->get();
+    return view('welcome', compact('events', 'lastEvents'));
 });
 
 Auth::routes();

@@ -104,9 +104,14 @@
 
             @include('components.slider')
 
-            <div class="content">
+            <div class="content container">
                 <div class="title m-b-md">
                     {{config('app.name')}}
+                </div>
+                <div class="row">
+                    <div class="col">
+                    @include('components.articles')
+                    </div>
                 </div>
             </div>
         </div>

@@ -22,4 +22,14 @@ class Event extends Model
     {
         return $this->belongsTo(User::class);
     }
+
+    public function url()
+    {
+        return url("ticket/{$this->id}");
+    }
+
+    public function asistentes()
+    {
+        return 0;
+    }
 }

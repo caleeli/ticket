@@ -66,20 +66,20 @@ class UploadFileController extends Controller
         $json->name = $file->getClientOriginalName();
         $json->mime = $file->getClientMimeType();
         $json->path = $file->storePubliclyAs('', $this->getPublicName($file), 'public');
-        $json->path = $this->resize($json->path, 580);
+        $json->path = $this->resize($json->path, 1160, 580);
         $json->url = asset('storage/' . $json->path);
         return $json;
     }
 
-    private function resize($file, $targetHeight)
+    private function resize($file, $targetWidth, $targetHeight)
     {
         $filePath = \storage_path('app/public/' . $file);
         $target = "{$filePath}.webp";
         $size = getimagesize($filePath);
         $ratio = $size[0] / $size[1];
-        $width = $targetHeight * $ratio;
-        $height = $targetHeight;
-        $dst = imagecreatetruecolor($width, $height);
+        $width = $targetWidth;
+        $height = $targetWidth / $ratio;
+        $dst = imagecreatetruecolor($targetWidth, $targetHeight);
         $src = imagecreatefromstring(file_get_contents($filePath));
         imagecopyresampled($dst, $src, 0, 0, 0, 0, $width, $height, $size[0], $size[1]);
         imagedestroy($src);
