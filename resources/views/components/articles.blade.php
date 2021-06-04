@@ -24,7 +24,7 @@
 
         <div class="entry-content">
             <p>
-                {{ Str::limit($event->description, 20, ' (...)') }}
+                {{ Str::limit($event->description, 80, ' (...)') }}
                 <a href="{{ $event->url() }}" class="more-link">
                     <span class="moretext">Más</span> <span class="screen-reader-text">{{ $event->name }}</span>
                 </a><!-- .more-link -->
