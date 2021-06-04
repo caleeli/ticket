@@ -14,9 +14,21 @@
       :search-in="['attributes.name']"
     >
       <template v-slot:actions="data">
+        <b-button @click="editarEntradas(data.item)" variant="info"><i class="fas fa-ticket-alt"></i> Entradas</b-button>
         <b-button :href="`/ticket/${data.item.id}`" target="_blank" variant="info"><i class="fas fa-eye"></i> Vista previa</b-button>
       </template>
     </tabla>
+    <b-modal id="entradas"
+      @ok="guardarEntradas"
+      title="Entradas disponibles"
+      ref="entradas"
+    >
+      <tabla :fields="entradasCols" :form-fields="entradasFields" :api="apiEntradas" :title="__('Entradas')"
+        :new-record="nuevaEntrada"
+        :params="{per_page: -1}"
+      >
+      </tabla>
+    </b-modal>
  </panel>
 </template>
 
@@ -26,6 +38,29 @@ export default {
   mixins: [window.ResourceMixin],
   data() {
     return {
+      ///
+      record: null,
+      apiEntradas: null,
+      nuevaEntrada: {
+        id: null,
+        attributes: {
+          name: '',
+          price: '',
+          available: '',
+        },
+      },
+      entradasCols: [
+        {key:'attributes.name', label: 'Título'},
+        {key:'attributes.price', label: 'Precio'},
+        {key:'attributes.available', label: 'Total disponibles'},
+        {key:'actions', label: ''},
+      ],
+      entradasFields: [
+        {key:'attributes.name', create: true, edit: true, label: 'Título'},
+        {key:'attributes.price', create: true, edit: true, label: 'Precio'},
+        {key:'attributes.available', create: true, edit: true, label: 'Total disponibles'},
+      ],
+      ///
       nuevoRegistro: {
         id: null,
         attributes: {
@@ -41,7 +76,6 @@ export default {
       eventos: this.$api.events.row(),
       api: this.$api.user[`${window.userId}/events`],
       fields: [
-        {key:'id', label: 'id'},
         {key:'attributes.name', label: 'Nombre del evento'},
         {key:'attributes.start_at', component: 'datetime', label: 'Desde'},
         {key:'attributes.end_at', component: 'datetime', label: 'Hasta'},
@@ -59,6 +93,16 @@ export default {
         {key:'attributes.image', create: true, edit: true, label: 'Imagen principal', component: 'UploadImage'},
       ],
     };
+  },
+  methods: {
+    editarEntradas(record) {
+      this.record = record;
+      this.apiEntradas = this.$api.events[`${record.id}/entradas`];
+      this.$refs.entradas.show();
+    },
+    guardarEntradas() {
+      this.$refs.entradas.hide();
+    },
   },
 };
 </script>

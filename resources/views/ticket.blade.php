@@ -97,9 +97,14 @@
                                         ticket/{$event->id}")) }}'&amp;src=sdkpreparse"
                                         class="fb-xfbml-parse-ignore">Compartir</a></div>
                             </div>
+                            @foreach($event->entradas as $entrada)
                             <div>
-                                <a href="#" class="w-100 btn btn-primary">Reservar</a>
+                                <a href="#" class="w-100 btn btn-primary">
+                                    <i class="fas fa-ticket-alt"></i>
+                                    {{ $entrada->name }}
+                                </a>
                             </div>
+                            @endforeach
                         </div>
                     </div>
                 </div>

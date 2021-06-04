@@ -42,7 +42,7 @@
         <avatar style="font-size: 2em" :value="data.item.attributes.avatar" />
       </template>
       <template v-slot:head(actions)="">
-        <div class="w-100 text-right">
+        <div class="w-100 text-right text-nowrap">
           <slot name="toolbar"></slot>
           <b-button v-if="!readonly" class="text-nowrap" variant="primary" @click="loadData"><i class="fas fa-sync"></i></b-button>
           <b-button v-if="!readonly" class="text-nowrap" variant="primary" @click="nuevo"><i class="fas fa-plus"></i> <span class="d-none d-md-inline-block">{{ __('new') }}</span></b-button>
