@@ -88,7 +88,7 @@ export default {
         {key:'attributes.start_at', component: 'datetime', create: true, edit: true, label: 'Desde'},
         {key:'attributes.end_at', component: 'datetime', create: true, edit: true, label: 'Hasta'},
         {key:'attributes.place', create: true, edit: true, label: 'Lugar'},
-        {key:'attributes.description', create: true, edit: true, label: 'Descripción'},
+        {key:'attributes.description', create: true, edit: true, label: 'Descripción', component: 'b-textarea'},
         {key:'attributes.categoria', create: true, edit: true, label: 'Categoria'},
         {key:'attributes.image', create: true, edit: true, label: 'Imagen principal', component: 'UploadImage'},
       ],
