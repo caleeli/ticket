@@ -68,4 +68,9 @@ class User extends Authenticatable
             'role' => 'required',
         ];
     }
+
+    public function events()
+    {
+        return $this->hasMany(Event::class);
+    }
 }

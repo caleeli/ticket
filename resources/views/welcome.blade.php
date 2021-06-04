@@ -6,7 +6,6 @@
 
         <title>{{config('app.name')}}</title>
 
-
         <!-- Styles -->
         <style>
             html, body {
@@ -81,9 +80,14 @@
                 animation-direction: alternate;
             }
         </style>
+        <link href="assets/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+        <link href="assets/css/font-awesome.min.css" rel="stylesheet">
+        <link href="assets/css/owl.carousel.css" type="text/css" rel="stylesheet">
+        <link href="assets/css/owl.theme.css" type="text/css" rel="stylesheet">
+        <link href="assets/css/style.min.css" rel="stylesheet">
     </head>
     <body>
-        <div class="flex-center position-ref full-height">
+        <div id="page" class="site" class="flex-center position-ref full-height">
             @if (Route::has('login'))
                 <div class="top-right links">
                     @auth
@@ -98,16 +102,24 @@
                 </div>
             @endif
 
+            @include('components.slider')
+
             <div class="content">
                 <div class="title m-b-md">
                     {{config('app.name')}}
                 </div>
-
-                <div class="links">
-                    <a href="/api/documentation">Docs</a>
-                    <a href="https://github.com/caleeli/coredump-app.git">GitHub</a>
-                </div>
             </div>
         </div>
+
+        <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+        <script src="assets/plugins/jquery.min.js"></script>
+        <!-- Include all compiled plugins (below), or include individual files as needed -->
+        <script src="assets/bootstrap/js/bootstrap.min.js"></script>
+        <script src="assets/plugins/imagesloaded.pkgd.min.js"></script>
+        <script src="assets/plugins/owl.carousel.min.js"></script>
+        <script src="assets/plugins/masonry.pkgd.min.js"></script>
+        <script src="assets/js/navigation.js"></script>
+        <script src="assets/js/skip-link-focus-fix.js"></script>
+        <script src="assets/js/script.min.js"></script>
     </body>
 </html>

@@ -44,8 +44,8 @@
       <template v-slot:head(actions)="">
         <div class="w-100 text-right">
           <slot name="toolbar"></slot>
-          <b-button v-if="!readonly" variant="primary" @click="loadData"><i class="fas fa-sync"></i></b-button>
-          <b-button v-if="!readonly" variant="primary" @click="nuevo"><i class="fas fa-plus"></i> <span class="d-none d-md-block">{{ __('new') }}</span></b-button>
+          <b-button v-if="!readonly" class="text-nowrap" variant="primary" @click="loadData"><i class="fas fa-sync"></i></b-button>
+          <b-button v-if="!readonly" class="text-nowrap" variant="primary" @click="nuevo"><i class="fas fa-plus"></i> <span class="d-none d-md-inline-block">{{ __('new') }}</span></b-button>
         </div>
       </template>
       <template v-slot:cell(actions)="data">
@@ -114,6 +114,9 @@ export default {
     api: Object,
     title: String,
     readonly: Boolean,
+    newRecord: {
+      default() { return nuevoRegistro; },
+    },
   },
   computed: {
     formFieldsF() {
@@ -132,7 +135,7 @@ export default {
         last_page: 0,
       },
       page: this.params.page || 1,
-      registro: cloneDeep(nuevoRegistro),
+      registro: cloneDeep(this.newRecord),
       error: '',
     };
   },
@@ -259,7 +262,7 @@ export default {
       if (this.inline) {
         this.value.push(cloneDeep(nuevoRegistroInline));
       } else {
-        this.registro = cloneDeep(nuevoRegistro);
+        this.registro = cloneDeep(this.newRecord);
         this.$refs.modal.show();
       }
     },

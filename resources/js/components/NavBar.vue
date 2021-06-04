@@ -7,10 +7,6 @@
         <router-link v-for="menu in $root.menus" :key="`menu-${menu.id}`"
           :to="menu.path" :class="`btn btn-${menu.variant}`"><i :class="menu.icon"></i> {{ __(menu.name) }}</router-link>
       </div>
-      <b-button class="mr-2" :variant="isEnabled() ? 'primary' : 'outline-primary'" @click="requestNotificationAccess">
-        <i v-if="isEnabled()" class="fas fa-bell"></i>
-        <i v-else class="fas fa-bell-slash"></i>
-      </b-button>
     </template>
     <form class="m-0" action="/logout" method="post">
     <div class="btn-group" role="group">
