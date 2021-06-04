@@ -38,3 +38,5 @@ Route::get('login/{provider}/callback', [LoginOAuthController::class, 'handlePro
 Route::get('oauth/userinfo', [LoginOAuthController::class, 'userinfo'])->middleware('auth:api');
 
 Route::get('ticket/{event}', [TicketController::class, 'show']);
+Route::get('ticket/{event}/reserva/{entrada}', [TicketController::class, 'reserva']);
+Route::post('ticket/{event}/reserva/{entrada}', [TicketController::class, 'reservaPost']);
