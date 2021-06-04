@@ -8,16 +8,8 @@
             "url": "https:\/\/github.com\/caleeli\/jdd-theme.git"
         },
         {
-            "type": "path",
-            "url": "../jdd-flow"
-        },
-        {
             "type": "vcs",
             "url": "https:\/\/github.com\/caleeli\/jdd-api.git"
-        },
-        {
-            "type": "vcs",
-            "url": "https:\/\/github.com\/caleeli\/pacman.git"
         }
     ],
     "keywords": [
