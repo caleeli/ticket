@@ -50,16 +50,9 @@
 <body>
     <!-- Load Facebook SDK for JavaScript -->
     <div id="fb-root"></div>
-    <script>
-        (function(d, s, id) {
-            var js, fjs = d.getElementsByTagName(s)[0];
-            if (d.getElementById(id)) return;
-            js = d.createElement(s);
-            js.id = id;
-            js.src = "https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v3.0";
-            fjs.parentNode.insertBefore(js, fjs);
-        }(document, 'script', 'facebook-jssdk'));
-    </script>
+    <script async defer crossorigin="anonymous"
+        src="https://connect.facebook.net/es_LA/sdk.js#xfbml=1&version=v10.0&appId=751646398900722&autoLogAppEvents=1"
+        nonce="mMpbBIKX"></script>
 
     <!-- As a heading -->
     <nav class="navbar navbar-light bg-light">
@@ -100,7 +93,8 @@
                             <div class="mb-2">
                                 <div class="fb-share-button" data-href='{{ url("ticket/{$event->id}") }}'
                                     data-layout="button" data-size="large"><a target="_blank"
-                                        href="https://www.facebook.com/sharer/sharer.php?u='{{ \urlencode(url("ticket/{$event->id}")) }}'&amp;src=sdkpreparse"
+                                        href="https://www.facebook.com/sharer/sharer.php?u='{{ \urlencode(url("
+                                        ticket/{$event->id}")) }}'&amp;src=sdkpreparse"
                                         class="fb-xfbml-parse-ignore">Compartir</a></div>
                             </div>
                             <div>
