@@ -12,6 +12,7 @@
 */
 
 use App\Http\Controllers\Auth\LoginOAuthController;
+use App\Http\Controllers\TicketController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
@@ -29,4 +30,4 @@ Route::get('login/{provider}/callback', [LoginOAuthController::class, 'handlePro
 
 Route::get('oauth/userinfo', [LoginOAuthController::class, 'userinfo'])->middleware('auth:api');
 
-
+Route::get('ticket/{event}', [TicketController::class, 'show']);
