@@ -17,4 +17,5 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-Route::post('/uploadfile', ['as' => 'api', 'uses' => 'UploadFileController@upload']);
+Route::post('/uploadfile', ['as' => 'api.uploadfile', 'uses' => 'UploadFileController@upload']);
+Route::post('/uploadimage', ['as' => 'api.uploadimage', 'uses' => 'UploadFileController@uploadImage']);

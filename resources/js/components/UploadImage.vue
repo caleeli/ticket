@@ -1,7 +1,7 @@
 <template>
   <div class="form-group">
     <div class="d-inline-block">
-      <upload v-model="local" @change="ready">
+      <upload v-model="local" @change="ready" url="/api/uploadimage">
         <button type="button" class="btn btn-primary">
           <i class="fas fa-file-upload"></i>
           {{ __("Subir imagen") }}
