@@ -12,7 +12,11 @@
      <tabla :fields="fields" :form-fields="formFields" :api="api" :title="__('Eventos')"
       :new-record="nuevoRegistro"
       :search-in="['attributes.name']"
-    ></tabla>
+    >
+      <template v-slot:actions="data">
+        <b-button :href="`/ticket/${data.item.id}`" target="_blank" variant="info"><i class="fas fa-eye"></i> Vista previa</b-button>
+      </template>
+    </tabla>
  </panel>
 </template>
 
