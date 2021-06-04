@@ -52,6 +52,7 @@ export default {
         {key:'attributes.place', create: true, edit: true, label: 'Lugar'},
         {key:'attributes.description', create: true, edit: true, label: 'Descripción'},
         {key:'attributes.categoria', create: true, edit: true, label: 'Categoria'},
+        {key:'attributes.image', create: true, edit: true, label: 'Imagen principal', component: 'UploadImage'},
       ],
     };
   },
