@@ -2,7 +2,7 @@
 
 @section('content')
 <div class="row justify-content-center">
-    <div class="col-6">
+    <div class="col-12 col-md-6">
         <div class="card">
             <img src="{{ $event->image['url'] }}" class="card-img-top" alt="{{ $event->name }}">
             <div class="card-body">
