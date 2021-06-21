@@ -1,7 +1,9 @@
-<table>
+<table style="width:80%;font-family: Inter, system-ui, -apple-system, Roboto, Ubuntu, Cantarell, sans-serif;">
     <tr>
         <td>
-            <a href="{{ $event->url() }}"><img src="{{ $event->image['url'] }}" alt="{{ $event->name }}"></a>
+            <a href="{{ $event->url() }}">
+                <img src="{{ $event->image['url'] }}" alt="{{ $event->name }}" style="width:100%">
+            </a>
         </td>
     </tr>
     <tr>
