@@ -5,6 +5,9 @@
     <div class="col-12 col-md-6">
         <div class="card">
             <img src="{{ $event->image['url'] }}" class="card-img-top" alt="{{ $event->name }}">
+            <p style="text-align:right;font-weight:bold;">
+                ticket {{ crc32($event->id) }}
+            </p>
             <div class="card-body">
                 <div>
                     <h5 class="card-title">{{ $event->name }}</h5>
