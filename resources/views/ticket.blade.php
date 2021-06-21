@@ -7,7 +7,7 @@
                 <img src="{{ $event->image['url'] }}" class="card-img-top" alt="{{ $event->name }}">
                 <div class="card-body">
                     <div class="row">
-                        <div class="col-9">
+                        <div class="col-md-9">
                             <h5 class="card-title">{{ $event->name }}</h5>
                             <p class="card-text">
                                 <a><i class="fas fa-map-marker-alt"></i> {{ $event->place }}</a>
@@ -24,7 +24,7 @@
                             </p>
                             <p class="card-text">{{ $event->description }}</p>
                         </div>
-                        <div class="col-3">
+                        <div class="col-md-3">
                             <div class="mb-2">
                                 <div class="fb-share-button" data-href='{{ url("ticket/{$event->id}") }}'
                                     data-layout="button" data-size="large"><a target="_blank"
