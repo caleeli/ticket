@@ -5,7 +5,7 @@
                 <img src="{{ $event->image['url'] }}" alt="{{ $event->name }}" style="width:100%">
             </a>
             <p style="text-align:right;font-weight:bold;">
-                {{ crc32($event->id) }}
+                ticket {{ crc32($event->id) }}
             </p>
         </td>
     </tr>
