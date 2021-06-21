@@ -53,6 +53,7 @@ export default {
         {key:'attributes.name', label: 'Título'},
         {key:'attributes.price', label: 'Precio'},
         {key:'attributes.available', label: 'Total disponibles'},
+        {key:'attributes.reserved', label: 'Total reservados'},
         {key:'actions', label: ''},
       ],
       entradasFields: [

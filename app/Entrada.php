@@ -10,6 +10,18 @@ use Illuminate\Database\Eloquent\Model;
 class Entrada extends Model
 {
     protected $guarded = [];
+    protected $appends = [
+        'reserved',
+    ];
+
+    public function getReservedAttribute()
+    {
+        return $this->reservas()->sum('quantity');
+    }
+
+    public function setReservedAttribute()
+    {
+    }
 
     public function url()
     {
