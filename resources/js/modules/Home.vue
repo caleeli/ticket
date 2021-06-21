@@ -23,10 +23,13 @@
       title="Entradas disponibles"
       ref="entradas"
     >
-      <tabla :fields="entradasCols" :form-fields="entradasFields" :api="apiEntradas" :title="__('Entradas')"
+      <tabla ref="entradas" :fields="entradasCols" :form-fields="entradasFields" :api="apiEntradas" :title="__('Entradas')"
         :new-record="nuevaEntrada"
         :params="{per_page: -1}"
       >
+        <template v-slot:actions="data">
+          <b-button @click="limpiar(data.item)" variant="warning"><i class="fas fa-eraser"></i> Limpiar reservas</b-button>
+        </template>
       </tabla>
     </b-modal>
  </panel>
@@ -96,6 +99,12 @@ export default {
     };
   },
   methods: {
+    limpiar(record) {
+      this.record = record;
+      this.$api.entradas.call(record.id, 'cleanReservations', {}).then(() => {
+        this.$refs.entradas.loadData();
+      });
+    },
     editarEntradas(record) {
       this.record = record;
       this.apiEntradas = this.$api.events[`${record.id}/entradas`];

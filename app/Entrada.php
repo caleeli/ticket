@@ -47,4 +47,9 @@ class Entrada extends Model
     {
         return $this->available - $this->asistentes();
     }
+
+    public function cleanReservations()
+    {
+        $this->reservas()->delete();
+    }
 }
