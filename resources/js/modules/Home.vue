@@ -28,7 +28,7 @@
         :params="{per_page: -1}"
       >
         <template v-slot:actions="data">
-          <b-button @click="limpiar(data.item)" variant="warning"><i class="fas fa-eraser"></i> Limpiar reservas</b-button>
+          <b-button @click="limpiar(data.item)" variant="warning" title="Limpiar reservas"><i class="fas fa-eraser"></i></b-button>
         </template>
       </tabla>
     </b-modal>
