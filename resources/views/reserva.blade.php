@@ -24,7 +24,7 @@
                             <dd><input id="cantidad" name="requested" value="0" type="number" min="1"
                                     max="{{ $entrada->available }}" onchange="updatePrice(this.value)">
                             </dd>
-                            <dt>Comprador</dt>
+                            <dt>Correo electrónico</dt>
                             <dd>
                                 <input name="email" required type="email" class="w-50">
                             </dd>
