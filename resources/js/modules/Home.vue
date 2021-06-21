@@ -23,7 +23,7 @@
       title="Entradas disponibles"
       ref="entradas"
     >
-      <tabla ref="entradas" :fields="entradasCols" :form-fields="entradasFields" :api="apiEntradas" :title="__('Entradas')"
+      <tabla ref="entradasTabla" :fields="entradasCols" :form-fields="entradasFields" :api="apiEntradas" :title="__('Entradas')"
         :new-record="nuevaEntrada"
         :params="{per_page: -1}"
       >
@@ -102,7 +102,7 @@ export default {
     limpiar(record) {
       this.record = record;
       this.$api.entradas.call(record.id, 'cleanReservations', {}).then(() => {
-        this.$refs.entradas.loadData();
+        this.$refs.entradasTabla.loadData();
       });
     },
     editarEntradas(record) {
