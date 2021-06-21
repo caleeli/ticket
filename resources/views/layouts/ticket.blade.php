@@ -17,7 +17,6 @@
         }
 
         .card-img-top {
-            max-height: 30vw;
         }
 
         .jdd-avatar-circle {
