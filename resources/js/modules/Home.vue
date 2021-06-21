@@ -52,8 +52,8 @@ export default {
       entradasCols: [
         {key:'attributes.name', label: 'Título'},
         {key:'attributes.price', label: 'Precio'},
-        {key:'attributes.available', label: 'Total disponibles'},
-        {key:'attributes.reserved', label: 'Total reservados'},
+        {key:'attributes.available', label: '# dispo'},
+        {key:'attributes.reserved', label: '# reserv'},
         {key:'actions', label: ''},
       ],
       entradasFields: [
