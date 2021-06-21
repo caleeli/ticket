@@ -21,7 +21,7 @@
                             <dt>Precio</dt>
                             <dd>{{ $entrada->price }}</dd>
                             <dt>Cantidad Entradas</dt>
-                            <dd><input id="cantidad" name="requested" value="0" type="number" min="1"
+                            <dd><input id="cantidad" name="requested" value="1" type="number" min="1"
                                     max="{{ $entrada->available }}" onchange="updatePrice(this.value)">
                             </dd>
                             <dt>Correo electrónico</dt>
