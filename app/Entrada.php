@@ -4,6 +4,9 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
+/**
+ * @property Event $event
+ */
 class Entrada extends Model
 {
     protected $guarded = [];
@@ -16,6 +19,11 @@ class Entrada extends Model
     public function reservas()
     {
         return $this->hasMany(Reserva::class);
+    }
+
+    public function event()
+    {
+        return $this->belongsTo(Event::class);
     }
 
     public function asistentes()

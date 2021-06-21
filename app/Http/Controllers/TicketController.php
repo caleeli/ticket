@@ -4,7 +4,9 @@ namespace App\Http\Controllers;
 
 use App\Entrada;
 use App\Event;
+use App\Mail\ReservaMail;
 use App\Reserva;
+use Illuminate\Support\Facades\Mail;
 
 class TicketController extends Controller
 {
@@ -28,6 +30,7 @@ class TicketController extends Controller
             'quantity' => $requested,
         ]);
         //}
+        Mail::to($email)->send(new ReservaMail($reserva));
         return view('gracias', compact('event', 'entrada', 'reserva'));
     }
 }
