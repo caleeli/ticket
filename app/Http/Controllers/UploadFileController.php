@@ -74,7 +74,7 @@ class UploadFileController extends Controller
     private function resize($file, $targetWidth, $targetHeight)
     {
         $filePath = \storage_path('app/public/' . $file);
-        $target = "{$filePath}.webp";
+        $target = "{$filePath}.jpg";
         $size = getimagesize($filePath);
         $ratio = $size[0] / $size[1];
         $width = $targetWidth;
@@ -83,7 +83,7 @@ class UploadFileController extends Controller
         $src = imagecreatefromstring(file_get_contents($filePath));
         imagecopyresampled($dst, $src, 0, 0, 0, 0, $width, $height, $size[0], $size[1]);
         imagedestroy($src);
-        imagewebp($dst, $target, 90);
+        imagejpeg($dst, $target, 90);
         imagedestroy($dst);
         unlink($filePath);
         return basename($target);
